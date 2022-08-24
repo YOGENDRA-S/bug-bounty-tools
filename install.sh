@@ -114,6 +114,18 @@ go get github.com/tomnomnom/waybackurls
 echo "done"
 
 
+#install gf
+echo "installing gf"
+go get github.com/tomnomnom/gf
+echo "done"
+
+
+#install gau
+echo "installing gau"
+go install github.com/lc/gau/v2/cmd/gau@latest
+echo "done"
+
+
 #install knockpy
 echo "Installing knockpy"
 git clone https://github.com/guelfoweb/knock.git /opt/tools/subdomain-enum/knockpy
