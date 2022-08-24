@@ -1,4 +1,4 @@
-# bug-bounty-tools
+# bbht
 This is the all in one tool
 
 
