@@ -11,4 +11,4 @@ cd bug-bounty-tools
 
 chmod +x install.sh 
 
-./install.sh
+./install.sh 
