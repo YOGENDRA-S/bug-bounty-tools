@@ -17,19 +17,18 @@ sudo apt-get install -y git
 sudo apt-get install -y rename
 sudo apt-get install -y xargs
 
-
 #create a directory for tools
-mkdir /opt/tools
+mkdir /root/tools
 echo "done"
 
 #install go
 if [[ -z "$GOPATH" ]];then
 echo "It looks like go is not installed, would you like to install it now"
 PS3="Please select an option : "
-choices=("yes" "no")
+choices=("y" "n")
 select choice in "${choices[@]}"; do
         case $choice in
-                yes)
+                y)
 
 					echo "Installing Golang"
 					wget https://dl.google.com/go/go1.17.6.linux-amd64.tar.gz
@@ -56,14 +55,14 @@ fi
 
 
 #create content-discovery, subdomain, and other directories
-echo "Creating /opt/tools/subdomain-enum"
-mkdir /opt/tools/subdomain-enum
-echo "Creating /opt/tools/content-discovery"
-mkdir /opt/tools/content-discovery
-echo "Creating /opt/tools/other"
-mkdir /opt/tools/other 
-echo "Creating /opt/tools/CloudFlare"
-mkdir /opt/tool/CloudFlare
+echo "Creating /root/tools/subdomain-enum"
+mkdir /root/tools/subdomain-enum
+echo "Creating /root/tools/content-discovery"
+mkdir /root/tools/content-discovery
+echo "Creating /root/tools/other"
+mkdir /root/tools/other 
+echo "Creating /root/tools/CloudFlare"
+mkdir /root/tools/CloudFlare
 
 
 #Don't forget to set up AWS credentials!
@@ -128,28 +127,28 @@ echo "done"
 
 #install knockpy
 echo "Installing knockpy"
-git clone https://github.com/guelfoweb/knock.git /opt/tools/subdomain-enum/knockpy
+git clone https://github.com/guelfoweb/knock.git /root/tools/subdomain-enum/knockpy
 echo "done"
 
 #install dnsenum
 echo "Installing dnsenum"
 sudo apt install libtest-www-mechanize-perl libnet-whois-ip-perl
-git clone https://github.com/fwaeytens/dnsenum /opt/tools/subdomain-enum/dnsenum
+git clone https://github.com/fwaeytens/dnsenum /root/tools/subdomain-enum/dnsenum
 
 
 #install subbrute
 echo "Installing subbrute"
-git clone https://github.com/TheRook/subbrute.git /opt/tools/subdomain-enum/subbrute
+git clone https://github.com/TheRook/subbrute.git /root/tools/subdomain-enum/subbrute
 echo "done"
 
 #install assetfinder
 echo "Installing asset finder"
-go get -u github.com/tomnomnom/assetfinder
+go get github.com/tomnomnom/assetfinder
 echo "done"
 
 #install domain-finder
 echo "Installing domain-finder"
-cd /opt/tools/subdomain-enum
+cd /root/tools/subdomain-enum
 wget https://raw.githubusercontent.com/gwen001/pentest-tools/master/domain-finder.py 
 echo "done"
 
@@ -160,48 +159,48 @@ go build rsdl.go
 
 #install subDomainizer
 echo "Installing subDomainizer"
-git clone https://github.com/nsonaniya2010/SubDomainizer.git /opt/tools/subdomain-enum/subDomainizer
+git clone https://github.com/nsonaniya2010/SubDomainizer.git /root/tools/subdomain-enum/subDomainizer
 echo "done"
 
 #install domain_analyzer
 echo "Installing domain_analyzer"
-git clone https://github.com/eldraco/domain_analyzer.git /opt/tools/subdomain-enum/domain_analyzer
+git clone https://github.com/eldraco/domain_analyzer.git /root/tools/subdomain-enum/domain_analyzer
 echo "done"
 
 #install massdns
 echo "Installing massdns"
-git clone https://github.com/blechschmidt/massdns.git /opt/tools/subdomain-enum/massdns
+git clone https://github.com/blechschmidt/massdns.git /root/tools/subdomain-enum/massdns
 echo "done"
 
 #install subfinder
 echo "Installing subfinder"
-git clone https://github.com/subfinder/subfinder.git /opt/tools/subdomain-enum/subfinder
-cd /opt/tools/subdomain-enum/subfinder
+git clone https://github.com/subfinder/subfinder.git /root/tools/subdomain-enum/subfinder
+cd /root/tools/subdomain-enum/subfinder
 go get github.com/subfinder/subfinder
 echo "done"
 
 #install amass
 echo "Installing amass"
-go get -u github.com/caffix/amass
+go get github.com/caffix/amass
 echo "done"
 
 #install sub.sh
 echo "Installing sub.sh"
 sudo apt-get install jq
-git clone https://github.com/cihanmehmet/sub.sh.git /opt/tools/subdomain-enum/sub.sh
+git clone https://github.com/cihanmehmet/sub.sh.git /root/tools/subdomain-enum/sub.sh
 echo "done"
 
 #install sublist3r
 echo "Installing Sublist3r"
-git clone https://github.com/aboul3la/Sublist3r.git /opt/tools/subdomain-enum/Sublist3r
-cd /opt/tools/subdomain-enum/Sublist3r
+git clone https://github.com/aboul3la/Sublist3r.git /root/tools/subdomain-enum/Sublist3r
+cd /root/tools/subdomain-enum/Sublist3r
 pip install -r requirements.txt
 echo "done"
 
 #install Sudomy
 echo "Installing Sudomy"
-git clone --recursive https://github.com/screetsec/Sudomy.git /opt/tools/subdomain-enum/Sudomy
-cd /opt/tools/subdomain-enum/Sudomy
+git clone --recursive https://github.com/screetsec/Sudomy.git /root/tools/subdomain-enum/Sudomy
+cd /root/tools/subdomain-enum/Sudomy
 pip install -r requirements.txt
 echo "done"
 
@@ -209,26 +208,26 @@ echo "done"
 
 #install secretx
 echo "installing secrtex"
-git clone https://github.com/xyele/secretx.git /opt/tools/content-discovery/api/secretx
-cd /opt/tools/content-discovery/api/secretx
+git clone https://github.com/xyele/secretx.git /root/tools/content-discovery/api/secretx
+cd /root/tools/content-discovery/api/secretx
 python3 -m pip install -r requirements.txt
 echo "done"
 
 
 #install s3brute
 echo "installing s3brute"
-git clone https://github.com/ghostlulzhacks/s3brute.git /opt/tools/content-discovery/AWS/s3brute
+git clone https://github.com/ghostlulzhacks/s3brute.git /root/tools/content-discovery/AWS/s3brute
 echo "done"
 
 #install s3-buckets-finder
 echo "installing s3-buckets-finder"
-git clone https://github.com/gwen001/s3-buckets-finder.git /opt/tools/content-discovery/AWS/s3-buckets-finder
+git clone https://github.com/gwen001/s3-buckets-finder.git /root/tools/content-discovery/AWS/s3-buckets-finder
 echo "done"
 
 #install bucket-stream
 echo "installing bucket-stream"
-git clone https://github.com/eth0izzle/bucket-stream.git /opt/tools/content-discovery/AWS/bucket-stream
-cd /opt/tools/content-discovery/AWS/bucket-stream
+git clone https://github.com/eth0izzle/bucket-stream.git /root/tools/content-discovery/AWS/bucket-stream
+cd /root/tools/content-discovery/AWS/bucket-stream
 pip3 install -r requirements.txt
 echo "done"
 
@@ -239,27 +238,27 @@ echo "done"
 
 #install lazys3
 echo "installing lazys3"
-git clone https://github.com/nahamsec/lazys3.git /opt/tools/content-discovery/AWS/lazys3
+git clone https://github.com/nahamsec/lazys3.git /root/tools/content-discovery/AWS/lazys3
 echo "done"
 
 #install cred_scanner
 echo "installing cred_scanner"
-git clone https://github.com/disruptops/cred_scanner.git /opt/tools/content-discovery/AWS/cred_scanner
-cd /opt/tools/content-discovery/AWS/cred_scanner
+git clone https://github.com/disruptops/cred_scanner.git /root/tools/content-discovery/AWS/cred_scanner
+cd /root/tools/content-discovery/AWS/cred_scanner
 pip install -r requirements.txt
 echo "done"
 
 #install DumpsterDiver
 echo "installing DumpsterDiver"
-git clone https://github.com/securing/DumpsterDiver.git /opt/tools/content-discovery/AWS/DumpsterDiver
-cd /opt/tools/content-discovery/AWS/DumpsterDiver
+git clone https://github.com/securing/DumpsterDiver.git /root/tools/content-discovery/AWS/DumpsterDiver
+cd /root/tools/content-discovery/AWS/DumpsterDiver
 pip install -r requirements.txt
 echo "done"
 
 #install S3Scanner
 echo "installing S3Scanner"
-git clone https://github.com/sa7mon/S3Scanner.git /opt/tools/content-discovery/AWS/S3Scanner 
-cd /opt/tools/content-discovery/AWS/S3Scanner
+git clone https://github.com/sa7mon/S3Scanner.git /root/tools/content-discovery/AWS/S3Scanner 
+cd /root/tools/content-discovery/AWS/S3Scanner
 pip install -r requirements.txt
 echo "done"
 
@@ -267,39 +266,39 @@ echo "done"
 
 #install JSParser
 echo "installing JSParser"
-git clone https://github.com/nahamsec/JSParser.git /opt/tools/content-discovery/JS/JSParser
+git clone https://github.com/nahamsec/JSParser.git /root/tools/content-discovery/JS/JSParser
 cd JSParser*
 sudo python setup.py install
 echo "done"
 
 #intall relative-url-extractor
 echo "installing relative-url-extractor"
-git clone https://github.com/jobertabma/relative-url-extractor.git /opt/tools/content-discovery/JS/relative-url-extractor
+git clone https://github.com/jobertabma/relative-url-extractor.git /root/tools/content-discovery/JS/relative-url-extractor
 echo "done"
 
 #install github-search
 echo "installing github-search"
-cd /opt/tools/content-discovery/JS
+cd /root/tools/content-discovery/JS
 wget https://raw.githubusercontent.com/gwen001/github-search/master/github-subdomains.py
 echo "done"
 
 #install subjs
 echo "installing subjs"
-go get -u github.com/lc/subjs
+go get github.com/lc/subjs
 echo "done"
 
 #install LinkFinder
 echo "install LinkFinder"
-git clone https://github.com/GerbenJavado/LinkFinder.git /opt/tools/content-discovery/JS/LinkFinder
-cd /opt/tools/content-discovery/JS/LinkFinder
+git clone https://github.com/GerbenJavado/LinkFinder.git /root/tools/content-discovery/JS/LinkFinder
+cd /root/tools/content-discovery/JS/LinkFinder
 python3 -m pip install -r requirements.txt
 echo "done"
 
 
 #install Cobra
 echo "installing Cobra"
-git clone https://github.com/WhaleShark-Team/cobra.git /opt/tools/content-discovery/code_audit/Cobra
-cd /opt/tools/content-discovery/code_audit/Cobra
+git clone https://github.com/WhaleShark-Team/cobra.git /root/tools/content-discovery/code_audit/Cobra
+cd /root/tools/content-discovery/code_audit/Cobra
 pip install -r requirements.txt
 echo "done"
 
@@ -307,17 +306,17 @@ echo "done"
 
 #install crawler
 echo "installing crawler"
-git clone https://github.com/ghostlulzhacks/crawler.git /opt/tools/content-discovery/crawlers/crawler
+git clone https://github.com/ghostlulzhacks/crawler.git /root/tools/content-discovery/crawlers/crawler
 echo "done"
 
 #install waybackMachine
 echo "installing waybackMachine"
-git clone https://github.com/ghostlulzhacks/waybackMachine.git /opt/tools/content-discovery/crawlers/waybackMachine
+git clone https://github.com/ghostlulzhacks/waybackMachine.git /root/tools/content-discovery/crawlers/waybackMachine
 echo "done"
 
 #install meg
 echo "installing meg"
-go get -u github.com/tomnomnom/meg
+go get github.com/tomnomnom/meg
 echo "done"
 
 #install hakrawler
@@ -327,7 +326,7 @@ echo "done"
 
 #install igoturls
 echo "installing igoturls"
-git clone https://github.com/xyele/igoturls.git /opt/tools/content-discovery/crawlers/igoturls
+git clone https://github.com/xyele/igoturls.git /root/tools/content-discovery/crawlers/igoturls
 echo "done"
 
 #install gobuster
@@ -342,14 +341,14 @@ echo "done"
 
 #install dirsearch
 echo "installing dirsearch"
-git clone https://github.com/maurosoria/dirsearch.git /opt/tools/dir-fuzz/dirsearch
+git clone https://github.com/maurosoria/dirsearch.git /root/tools/dir-fuzz/dirsearch
 echo "done"
 
 
 
 #install imperva
 echo "installing imperva"
-git clone https://github.com/imperva/automatic-api-attack-tool.git /opt/tools/exploitation/api/imperva
+git clone https://github.com/imperva/automatic-api-attack-tool.git /root/tools/exploitation/api/imperva
 echo "done"
 
 
@@ -364,26 +363,26 @@ echo "done"
 
 #install subdomain-takeover
 echo "installing subdomain-takeover"
-git clone https://github.com/antichown/subdomain-takeover.git /opt/tools/exploitation/subdomain-takeover
-cd /opt/tools/exploitation/subdomain-takeover
+git clone https://github.com/antichown/subdomain-takeover.git /root/tools/exploitation/subdomain-takeover
+cd /root/tools/exploitation/subdomain-takeover
 pip install -r requirements.txt
 echo "done"
 
 #install takeover
 echo "installing takeover"
-git clone https://github.com/m4ll0k/takeover.git /opt/tools/exploitation/takeover
+git clone https://github.com/m4ll0k/takeover.git /root/tools/exploitation/takeover
 echo "done"
 
 #install SubOver
 echo "installing SubOver"
 go get github.com/Ice3man543/SubOver
-
+echo "done"
 
 
 #install GCPBucketBrute
 echo "installing GCPBucketBrute"
-git clone https://github.com/RhinoSecurityLabs/GCPBucketBrute.git /opt/tools/exploitation/google-cloud-storage/GCPBucketBrute
-cd /opt/tools/exploitation/google-cloud-storage/GCPBucketBrute
+git clone https://github.com/RhinoSecurityLabs/GCPBucketBrute.git /root/tools/exploitation/google-cloud-storage/GCPBucketBrute
+cd /root/tools/exploitation/google-cloud-storage/GCPBucketBrute
 python3 -m pip install -r requirements.txt
 echo "done"
 
@@ -392,25 +391,25 @@ echo "done"
 
 #install spaces-finder
 echo "installing spaces-finder"
-git clone https://github.com/appsecco/spaces-finder.git /opt/tools/exploitation/digital-ocean/spaces-finder
-cd /opt/tools/exploitation/digital-ocean/spaces-finder
+git clone https://github.com/appsecco/spaces-finder.git /root/tools/exploitation/digital-ocean/spaces-finder
+cd /root/tools/exploitation/digital-ocean/spaces-finder
 python3 -m pip install -r requirements.txt
-
+echo "done"
 
 
 
 
 #install XEEinjector
 echo "installing XEEinjector"
-git clone https://github.com/enjoiz/XXEinjector.git /opt/tools/exploitation/XXE/XXEinjector
+git clone https://github.com/enjoiz/XXEinjector.git /root/tools/exploitation/XXE/XXEinjector
 echo "done"
 
 
 
 #install XSRFProbe
 echo "installing XSRFProbe"
-git clone https://github.com/0xInfection/XSRFProbe.git /opt/tools/exploitation/CSRF/XSRFProbe
-cd /opt/tools/exploitation/CSRF/XSRFProbe
+git clone https://github.com/0xInfection/XSRFProbe.git /root/tools/exploitation/CSRF/XSRFProbe
+cd /root/tools/exploitation/CSRF/XSRFProbe
 python3 setup.py install
 echo "done"
 
@@ -419,7 +418,7 @@ echo "done"
 
 #install commix
 echo "installing commix"
-git clone https://github.com/commixproject/commix.git /opt/tools/exploitation/command-injection/commix
+git clone https://github.com/commixproject/commix.git /root/tools/exploitation/command-injection/commix
 echo "done"
 
 
@@ -427,21 +426,21 @@ echo "done"
 
 #install sqlmap
 echo "installing sqlmap"
-git clone https://github.com/sqlmapproject/sqlmap.git /opt/tools/exploitation/sqli/sqlmap
+git clone https://github.com/sqlmapproject/sqlmap.git /root/tools/exploitation/sqli/sqlmap
 echo "done"
 
 
 #install sqliv
 echo "installing sqliv"
-git clone https://github.com/the-robot/sqliv.git /opt/tools/exploitation/sqli/sqliv
-cd /opt/tools/exploitation/sqli/sqliv
+git clone https://github.com/the-robot/sqliv.git /root/tools/exploitation/sqli/sqliv
+cd /root/tools/exploitation/sqli/sqliv
 sudo python2 setup.py -i
 echo "done"
 
 #install sqlmate
 echo "installing sqlmate"
-git clone https://github.com/s0md3v/sqlmate.git /opt/tools/exploitation/sqli/sqlmate
-cd /opt/tools/exploitation/sqli/sqlmate
+git clone https://github.com/s0md3v/sqlmate.git /root/tools/exploitation/sqli/sqlmate
+cd /root/tools/exploitation/sqli/sqlmate
 pip install -r requirements.txt
 echo "done"
 
@@ -449,20 +448,23 @@ echo "done"
 
 #install XSStrike
 echo "installing XSStrike"
-git clone https://github.com/s0md3v/XSStrike.git /opt/tools/exploitation/xss/XSStrike
-cd /opt/tools/exploitation/xss/XSStrike
+git clone https://github.com/s0md3v/XSStrike.git /root/tools/exploitation/xss/XSStrike
+cd /root/tools/exploitation/xss/XSStrike
 python3 -m pip install -r requirements.txt
 echo "done"
 
 #install XSS-keylogger
 echo "installing XSS-keylogger"
-git clone https://github.com/hadynz/xss-keylogger.git /opt/tools/exploitation/xss/XSS-keylogger
+git clone https://github.com/hadynz/xss-keylogger.git /root/tools/exploitation/xss/XSS-keylogger
 echo "done"
 
 
 #install CloudFail
 echo "installing CloudFail"
-git clone https://github.com/m0rtem/CloudFail.git /opt/tools/CloudFlare/CloudFail
+git clone https://github.com/m0rtem/CloudFail.git /root/tools/CloudFlare/CloudFail
+cd /root/tools/CloudFlare/CloudFail
+pip3 install -r requirements.txt
+python3 cloudfail.py
 echo "done"
 
 
@@ -473,29 +475,30 @@ python3 -m pip install trufflehog
 
 #installing 
 echo "installing git-dumper"
-git clone https://github.com/arthaud/git-dumper.git /opt/tools/Git/git-dumper
-
-
-
+git clone https://github.com/arthaud/git-dumper.git /root/tools/Git/git-dumper
+cd /root/tools/Git/git-dumper
+pip install -r requirements.txt
+pip install git-dumper
+echo "done"
 
 
 #install CMSmap
 echo "installing CMSmap"
-git clone https://github.com/Dionach/CMSmap.git /opt/tools/CMS/CMSmap
-cd /opt/tools/CMS/CMSmap
+git clone https://github.com/Dionach/CMSmap.git /root/tools/CMS/CMSmap
+cd /root/tools/CMS/CMSmap
 pip3 install .
 echo "done"
 
 #install CMSeek
 echo "installing CMSeek"
-git clone https://github.com/Tuhinshubhra/CMSeeK.git /opt/tools/CMS/CMSeek
-cd /opt/tools/CMS/CMSeek
+git clone https://github.com/Tuhinshubhra/CMSeeK.git /root/tools/CMS/CMSeek
+cd /root/tools/CMS/CMSeek
 python3 -m pip install -r requirements.txt
 echo "done"
 
 #install Joomscan
 echo "installing Joomscan"
-git clone https://github.com/rezasp/joomscan.git /opt/tools/CMS/Joomscan
+git clone https://github.com/rezasp/joomscan.git /root/tools/CMS/Joomscan
 echo "done"
 
 #install wpscan
@@ -512,8 +515,8 @@ echo "done"
 
 #install Sn1per
 echo "installing Sn1per"
-git clone https://github.com/1N3/Sn1per.git /opt/tools/Frameworks/Sn1per
-cd /opt/tools/Frameworks/Sn1per
+git clone https://github.com/1N3/Sn1per.git /root/tools/Frameworks/Sn1per
+cd /root/tools/Frameworks/Sn1per
 bash install.sh
 echo "done"
 
@@ -529,8 +532,8 @@ echo "done"
 
 #install datasploit
 echo "installing datasploit"
-git clone https://github.com/DataSploit/datasploit.git /opt/tools/Frameworks/datasploit
-cd /opt/tools/Frameworks/datasploit
+git clone https://github.com/DataSploit/datasploit.git /root/tools/Frameworks/datasploit
+cd /root/tools/Frameworks/datasploit
 python3 -m pip install --upgrade --force-reinstall -r requirements.txt
 echo "done"
 
@@ -538,58 +541,60 @@ echo "done"
 
 #install Osmedeus
 echo "installing Osmedeus"
-git clone https://github.com/j3ssie/Osmedeus.git /opt/tools/Frameworks/osmedeus
-cd /opt/tools/Frameworks/osmedeus
-./install.sh
+git clone https://github.com/j3ssie/Osmedeus.git /root/tools/Frameworks/osmedeus
+cd /root/tools/Frameworks/osmedeus
+bash install.sh
 echo "done"
 
 
 
 #install TIDoS-Framework
 echo "installing TIDoS-Framework"
-git clone https://github.com/0xinfection/tidos-framework.git /opt/tools/Frameworks/TIDoS-Framework
-cd /opt/tools/Frameworks/osmedeus
+git clone https://github.com/0xinfection/tidos-framework.git /root/tools/Frameworks/TIDoS-Framework
+cd /root/tools/Frameworks/osmedeus
 chmod +x install
-./install
+bash install
 echo "done"
 
 
 
 #install discover
 echo "installing discover"
-git clone https://github.com/leebaird/discover.git /opt/tools/Frameworks/discover
-cd /opt/tools/Frameworks/discover
-./update.sh
+git clone https://github.com/leebaird/discover.git /root/tools/Frameworks/discover
+cd /root/tools/Frameworks/discover
+bash update.sh
 echo "done"
 
 
 
 #install lazyrecon
 echo "installing lazyrecon"
-git clone https://github.com/nahamsec/lazyrecon.git /opt/tools/Frameworks/lazyrecon
+git clone https://github.com/nahamsec/lazyrecon.git /root/tools/Frameworks/lazyrecon
+cd /root/tools/Frameworks/lazyrecon
+bash lazyrecon.sh
 echo "done"
 
 
 
 #install 003Recon
 echo "installing 003Recon"
-git clone https://github.com/003random/003Recon.git /opt/tools/Frameworks/003Recon
-cd /opt/tools/Frameworks/003Recon
-./install.sh
+git clone https://github.com/003random/003Recon.git /root/tools/Frameworks/003Recon
+cd /root/tools/Frameworks/003Recon
+bash install.sh
 echo "done"
 
 
 #install LazyRecon
 echo "installing LazyRecon"
 echo "remember to set API keys!!"
-git clone https://github.com/capt-meelo/LazyRecon.git /opt/tools/Frameworks/LazyRecon
+git clone https://github.com/capt-meelo/LazyRecon.git /root/tools/Frameworks/LazyRecon
 echo "done"
 
 
 #install Vulmap
 echo "installing Vulmap"
-git clone https://github.com/zhzyker/vulmap.git /opt/tools/Frameworks/Vulmap
-cd /opt/tools/Frameworks/Vulmap
+git clone https://github.com/zhzyker/vulmap.git /root/tools/Frameworks/Vulmap
+cd /root/tools/Frameworks/Vulmap
 python3 -m pip install -r requirements.txt
 echo "done"
 
@@ -608,8 +613,8 @@ echo "done"
 
 #install Blazy
 echo "installing Blazy"
-git clone https://github.com/s0md3v/Blazy.git /opt/tools/other/Blazy
-cd /opt/tools/other/Blazy
+git clone https://github.com/s0md3v/Blazy.git /root/tools/other/Blazy
+cd /root/tools/other/Blazy
 pip install -r requirements.txt
 echo "done"
 
@@ -635,21 +640,21 @@ echo "done"
 
 #install Seclists
 echo "downloading Seclist"
-git clone https://github.com/danielmiessler/SecLists.git /opt/tools/Wordlists/SecLists
+git clone https://github.com/danielmiessler/SecLists.git /root/tools/Wordlists/SecLists
 echo "done"
-cd /opt/tools/Wordlists/SecLists/Discovery/DNS/
+cd /root/tools/Wordlists/SecLists/Discovery/DNS/
 ##THIS FILE BREAKS MASSDNS AND NEEDS TO BE CLEANED
 cat dns-Jhaddix.txt | head -n -14 > clean-jhaddix-dns.txt
 
 
 #install JHaddix Wordlist
 echo "downloading JHaddix wordlist"
-cd /opt/tools/Wordlists
+cd /root/tools/Wordlists
 wget https://gist.githubusercontent.com/jhaddix/b80ea67d85c13206125806f0828f4d10/raw/c81a34fe84731430741e0463eb6076129c20c4c0/content_discovery_all.txt
 echo "done"
 
 #install Nahamsec list
 echo "downloading Nahamsec list"
-cd /opt/tools/Wordlists
+cd /root/tools/Wordlists
 wget https://gist.githubusercontent.com/Leoid/38984017886cd058a314dfda5c3d6c6e/raw/1ee5fe1da82a3ae92b0c486f86fbe26bbdff1e06/Nahamsec%2520Thread
 echo "done"
