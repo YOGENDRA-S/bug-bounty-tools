@@ -505,7 +505,7 @@ echo "done"
 echo "installing Sn1per"
 git clone https://github.com/1N3/Sn1per.git /root/tools/Frameworks/Sn1per
 cd /root/tools/Frameworks/Sn1per
-bash install.sh
+./install.sh
 echo "done"
 
 
