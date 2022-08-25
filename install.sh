@@ -6,7 +6,7 @@ sudo apt-get -y update
 
 sudo apt-get -y upgrade
 
-sudo apt-get install -y libcurl4-openssl-dev
+sudo apt-get instally libcurl4-openssl-dev
 
 sudo apt-get install -y libssl-dev
 
@@ -32,7 +32,19 @@ sudo apt-get install -y git
 
 sudo apt-get install -y rename
 
+sudo apt-get install -y golang
+
 sudo apt-get install -y xargs
+
+#install
+echo "installing"
+go install github.com/lc/gau/v2/cmd/gau@latest
+go install github.com/hahwul/dalfox/v2@latest
+go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
+go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
+go install github.com/tomnomnom/unfurl@latest
+go install -v github.com/lukasikic/subzy@latest
+echo "done"
 
 #install go
 if [[ -z "$GOPATH" ]];then
@@ -78,18 +90,7 @@ echo "Don't forget to set up AWS credentials!"
 mkdir ~/tools
 cd ~/tools/
 
-#install
-echo "installing"
-go install github.com/lc/gau/v2/cmd/gau@latest
-go install github.com/hahwul/dalfox/v2@latest
-go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
-go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
-go install github.com/tomnomnom/unfurl@latest
 
-
-echo "installing subzy@latest"
-go install -v github.com/lukasikic/subzy@latest
-echo "done"
 
 #install aquatone
 echo "Installing Aquatone"
