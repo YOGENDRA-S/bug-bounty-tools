@@ -523,8 +523,6 @@ echo "done"
 #install XRay
 echo "installing XRay"
 go get github.com/evilsocket/xray
-cd $GOPATH/src/github.com/evilsocket/xray/
-make
 echo "done"
 
 
@@ -542,7 +540,6 @@ echo "done"
 echo "installing Osmedeus"
 git clone https://github.com/j3ssie/Osmedeus.git /root/tools/Frameworks/osmedeus
 cd /root/tools/Frameworks/osmedeus
-bash install.sh
 echo "done"
 
 
@@ -552,7 +549,6 @@ echo "installing TIDoS-Framework"
 git clone https://github.com/0xinfection/tidos-framework.git /root/tools/Frameworks/TIDoS-Framework
 cd /root/tools/Frameworks/osmedeus
 chmod +x install
-bash install
 echo "done"
 
 
@@ -561,7 +557,6 @@ echo "done"
 echo "installing discover"
 git clone https://github.com/leebaird/discover.git /root/tools/Frameworks/discover
 cd /root/tools/Frameworks/discover
-bash update.sh
 echo "done"
 
 
@@ -570,7 +565,7 @@ echo "done"
 echo "installing lazyrecon"
 git clone https://github.com/nahamsec/lazyrecon.git /root/tools/Frameworks/lazyrecon
 cd /root/tools/Frameworks/lazyrecon
-bash lazyrecon.sh
+chmod +x lazyrecon.sh
 echo "done"
 
 
@@ -579,7 +574,7 @@ echo "done"
 echo "installing 003Recon"
 git clone https://github.com/003random/003Recon.git /root/tools/Frameworks/003Recon
 cd /root/tools/Frameworks/003Recon
-bash install.sh
+chmod +x install.sh
 echo "done"
 
 
