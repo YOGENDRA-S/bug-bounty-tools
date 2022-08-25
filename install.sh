@@ -1,6 +1,6 @@
 #!/bin/bash
 
-apt-get autoremove
+sudo apt-get -y autoremove
 sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get install -y libcurl4-openssl-dev
@@ -84,6 +84,11 @@ go get github.com/Emoe/kxss
 echo "done"
 
 
+echo "installing waybackurls"
+go get github.com/tomnomnom/waybackurls
+echo "done"
+
+
 #install httprobe
 echo "installing httprobe"
 go get -u github.com/tomnomnom/httprobe 
@@ -108,9 +113,9 @@ go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
 echo "done"
 
 
-#install waybackurls
-echo "installing waybackurls"
-go get github.com/tomnomnom/waybackurls
+#install dolfox 
+echo "installing dolfox"
+go install github.com/hahwul/dalfox/v2@latest
 echo "done"
 
 
@@ -167,6 +172,13 @@ echo "done"
 echo "Installing domain_analyzer"
 git clone https://github.com/eldraco/domain_analyzer.git /root/tools/subdomain-enum/domain_analyzer
 echo "done"
+
+#install XSRFProbe
+echo "installing XSRFProbe"
+git clone https://github.com/0xInfection/XSRFProbe.git
+pip install xsrfprobe
+echo "done"
+
 
 #install massdns
 echo "Installing massdns"
