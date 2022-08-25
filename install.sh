@@ -19,7 +19,8 @@ sudo apt-get install -y rename
 sudo apt-get install -y xargs
 
 #create a directory for tools
-mkdir /root/tools
+mkdir ~/tools
+cd ~/tools/
 echo "done"
 
 #install go
@@ -61,15 +62,6 @@ go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
 go install github.com/tomnomnom/unfurl@latest
 go install -v github.com/lukasikic/subzy@latest
 
-#create content-discovery, subdomain, and other directories
-echo "Creating /root/tools/subdomain-enum"
-mkdir /root/tools/subdomain-enum
-echo "Creating /root/tools/content-discovery"
-mkdir /root/tools/content-discovery
-echo "Creating /root/tools/other"
-mkdir /root/tools/other 
-echo "Creating /root/tools/CloudFlare"
-mkdir /root/tools/CloudFlare
 
 
 #Don't forget to set up AWS credentials!
