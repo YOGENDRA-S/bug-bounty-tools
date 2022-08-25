@@ -39,11 +39,15 @@ sudo apt-get install -y xargs
 #install
 echo "installing"
 go install github.com/lc/gau/v2/cmd/gau@latest
+go install -v github.com/projectdiscovery/httpx/cmd/httpx@lates
 go install github.com/hahwul/dalfox/v2@latest
 go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
 go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
 go install github.com/tomnomnom/unfurl@latest
+go install -v github.com/projectdiscovery/naabu/v2/cmd/naabu@latest
 go install -v github.com/lukasikic/subzy@latest
+go install -v github.com/projectdiscovery/proxify/cmd/proxify@latest
+go install github.com/OJ/gobuster/v3@latest
 echo "done"
 
 #install go
@@ -106,6 +110,11 @@ echo "done"
 
 echo "installing waybackurls"
 go get github.com/tomnomnom/waybackurls
+echo "done"
+
+#install 
+echo "installing assetfinder"
+go get -u github.com/tomnomnom/assetfinder
 echo "done"
 
 
@@ -320,11 +329,6 @@ echo "installing hakrawler"
 go get github.com/hakluke/hakrawler
 echo "done"
 
-
-#install gobuster
-echo "installing gobuster"
-go get github.com/OJ/gobuster
-echo "done"
 
 #install ffuf
 echo "installing ffuf"
