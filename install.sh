@@ -103,18 +103,18 @@ echo "done"
 
 #install knockpy
 echo "Installing knockpy"
-git clone https://github.com/guelfoweb/knock.git /root/tools/subdomain-enum/knockpy
+git clone https://github.com/guelfoweb/knock.git root/tools/knockpy
 echo "done"
 
 #install dnsenum
 echo "Installing dnsenum"
 sudo apt install libtest-www-mechanize-perl libnet-whois-ip-perl
-git clone https://github.com/fwaeytens/dnsenum /root/tools/subdomain-enum/dnsenum
+git clone https://github.com/fwaeytens/dnsenum root/tools/dnsenum
 
 
 #install subbrute
 echo "Installing subbrute"
-git clone https://github.com/TheRook/subbrute.git /root/tools/subdomain-enum/subbrute
+git clone https://github.com/TheRook/subbrute.git root/tools/subdomain-enum/subbrute
 echo "done"
 
 #install assetfinder
@@ -124,7 +124,7 @@ echo "done"
 
 #install domain-finder
 echo "Installing domain-finder"
-cd /root/tools/subdomain-enum
+cd /tools/subdomain-enum
 wget https://raw.githubusercontent.com/gwen001/pentest-tools/master/domain-finder.py 
 echo "done"
 
@@ -135,12 +135,12 @@ go build rsdl.go
 
 #install subDomainizer
 echo "Installing subDomainizer"
-git clone https://github.com/nsonaniya2010/SubDomainizer.git /root/tools/subdomain-enum/subDomainizer
+git clone https://github.com/nsonaniya2010/SubDomainizer.git root/tools/subdomain-enum/subDomainizer
 echo "done"
 
 #install domain_analyzer
 echo "Installing domain_analyzer"
-git clone https://github.com/eldraco/domain_analyzer.git /root/tools/subdomain-enum/domain_analyzer
+git clone https://github.com/eldraco/domain_analyzer.git root/tools/subdomain-enum/domain_analyzer
 echo "done"
 
 #install XSRFProbe
