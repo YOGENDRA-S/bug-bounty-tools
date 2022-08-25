@@ -44,7 +44,7 @@ select choice in "${choices[@]}"; do
 					source ~/.bash_profile
 					sleep 1
 					break
-					go install github.com/lc/gau/v2/cmd/gau@latest;;
+					;;
 				no)
 					echo "Please install go and rerun this script"
 					echo "Aborting installation..."
