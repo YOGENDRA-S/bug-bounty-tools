@@ -1,5 +1,6 @@
 #!/bin/bash
 
+apt-get autoremove
 sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get install -y libcurl4-openssl-dev
@@ -209,8 +210,6 @@ echo "done"
 #install secretx
 echo "installing secrtex"
 git clone https://github.com/xyele/secretx.git /root/tools/content-discovery/api/secretx
-cd /root/tools/content-discovery/api/secretx
-python3 -m pip install -r requirements.txt
 echo "done"
 
 
