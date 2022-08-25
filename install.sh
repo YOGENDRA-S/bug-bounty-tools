@@ -1,40 +1,51 @@
 #!/bin/bash
 
 sudo apt-get -y autoremove
-sudo apt-get -y update
-sudo apt-get -y upgrade
-sudo apt-get install -y libcurl4-openssl-dev
-sudo apt-get install -y libssl-dev
-sudo apt-get install -y jq
-sudo apt-get install -y ruby-full
-sudo apt-get install -y libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev ruby-dev build-essential libgmp-dev zlib1g-dev
-sudo apt-get install -y build-essential libssl-dev libffi-dev python-dev
-sudo apt-get install -y python-setuptools
-sudo apt-get install -y libldns-dev
-sudo apt-get install -y python3-pip
-sudo apt-get install -y python-pip
-sudo apt-get install -y python-dnspython
-sudo apt-get install -y git
-sudo apt-get install -y rename
-sudo apt-get install -y xargs
 
-#create a directory for tools
-mkdir ~/tools
-cd ~/tools/
-echo "done"
+sudo apt-get -y update
+
+sudo apt-get -y upgrade
+
+sudo apt-get install -y libcurl4-openssl-dev
+
+sudo apt-get install -y libssl-dev
+
+sudo apt-get install -y jq
+
+sudo apt-get install -y ruby-full
+
+sudo apt-get install -y libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev ruby-dev build-essential libgmp-dev zlib1g-dev
+
+sudo apt-get install -y build-essential libssl-dev libffi-dev python-dev
+
+sudo apt-get install -y python-setuptools
+
+sudo apt-get install -y libldns-dev
+
+sudo apt-get install -y python3-pip
+
+sudo apt-get install -y python-pip
+
+sudo apt-get install -y python-dnspython
+
+sudo apt-get install -y git
+
+sudo apt-get install -y rename
+
+sudo apt-get install -y xargs
 
 #install go
 if [[ -z "$GOPATH" ]];then
 echo "It looks like go is not installed, would you like to install it now"
 PS3="Please select an option : "
-choices=("y" "n")
+choices=("yes" "no")
 select choice in "${choices[@]}"; do
         case $choice in
-                y)
+                yes)
 
 					echo "Installing Golang"
-					wget https://dl.google.com/go/go1.19.linux-amd64.tar.gz
-					sudo tar -xvf go1.19.linux-amd64.tar.gz
+					wget https://dl.google.com/go/go1.13.4.linux-amd64.tar.gz
+					sudo tar -xvf go1.13.4.linux-amd64.tar.gz
 					sudo mv go /usr/local
 					export GOROOT=/usr/local/go
 					export GOPATH=$HOME/go
@@ -55,20 +66,30 @@ select choice in "${choices[@]}"; do
 done
 fi
 
+
+#Don't forget to set up AWS credentials!
+echo "Don't forget to set up AWS credentials!"
+apt install -y awscli
+echo "Don't forget to set up AWS credentials!"
+
+
+
+#create a tools folder in ~/
+mkdir ~/tools
+cd ~/tools/
+
+#install
+echo "installing"
 go install github.com/lc/gau/v2/cmd/gau@latest
 go install github.com/hahwul/dalfox/v2@latest
 go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
 go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
 go install github.com/tomnomnom/unfurl@latest
+
+
+echo "installing subzy@latest"
 go install -v github.com/lukasikic/subzy@latest
-
-
-
-#Don't forget to set up AWS credentials!
-echo "Don't forget to set up AWS credentials!"
-pip install awscli --upgrade --user
-echo "Don't forget to set up AWS credentials!"
-
+echo "done"
 
 #install aquatone
 echo "Installing Aquatone"
