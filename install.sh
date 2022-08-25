@@ -44,7 +44,7 @@ select choice in "${choices[@]}"; do
 					source ~/.bash_profile
 					sleep 1
 					break
-					;;
+					go install github.com/lc/gau/v2/cmd/gau@latest;;
 				no)
 					echo "Please install go and rerun this script"
 					echo "Aborting installation..."
@@ -54,6 +54,12 @@ select choice in "${choices[@]}"; do
 done
 fi
 
+go install github.com/lc/gau/v2/cmd/gau@latest
+go install github.com/hahwul/dalfox/v2@latest
+go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
+go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
+go install github.com/tomnomnom/unfurl@latest
+go install -v github.com/lukasikic/subzy@latest
 
 #create content-discovery, subdomain, and other directories
 echo "Creating /root/tools/subdomain-enum"
@@ -95,40 +101,12 @@ go get -u github.com/tomnomnom/httprobe
 echo "done"
 
 
-#install unfurl
-echo "installing unfurl"
-go get -u github.com/tomnomnom/unfurl 
-echo "done"
-
-
-#install subfinder
-echo "installing subfinder"
-go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
-echo "done"
-
-
-#install nuclei 
-echo "installing nuclei"
-go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
-echo "done"
-
-
-#install dolfox 
-echo "installing dolfox"
-go install github.com/hahwul/dalfox/v2@latest
-echo "done"
-
-
 #install gf
 echo "installing gf"
 go get github.com/tomnomnom/gf
 echo "done"
 
 
-#install gau
-echo "installing gau"
-go install github.com/lc/gau/v2/cmd/gau@latest
-echo "done"
 
 
 #install knockpy
