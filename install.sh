@@ -316,10 +316,6 @@ echo "installing hakrawler"
 go get github.com/hakluke/hakrawler
 echo "done"
 
-#install igoturls
-echo "installing igoturls"
-git clone https://github.com/xyele/igoturls.git /root/tools/content-discovery/crawlers/igoturls
-echo "done"
 
 #install gobuster
 echo "installing gobuster"
