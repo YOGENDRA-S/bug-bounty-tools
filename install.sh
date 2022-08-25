@@ -206,13 +206,6 @@ pip install -r requirements.txt
 echo "done"
 
 
-
-#install secretx
-echo "installing secrtex"
-git clone https://github.com/xyele/secretx.git /root/tools/content-discovery/api/secretx
-echo "done"
-
-
 #install s3brute
 echo "installing s3brute"
 git clone https://github.com/ghostlulzhacks/s3brute.git /root/tools/content-discovery/AWS/s3brute
