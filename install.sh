@@ -1,6 +1,5 @@
 #!/bin/bash
 
-sudo apt-get -y autoremove
 
 sudo apt-get -y update
 
@@ -648,3 +647,5 @@ echo "downloading Nahamsec list"
 cd /root/tools/Wordlists
 wget https://gist.githubusercontent.com/Leoid/38984017886cd058a314dfda5c3d6c6e/raw/1ee5fe1da82a3ae92b0c486f86fbe26bbdff1e06/Nahamsec%2520Thread
 echo "done"
+
+sudo apt-get -y autoremove
