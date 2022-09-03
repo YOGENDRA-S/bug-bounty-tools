@@ -1,9 +1,7 @@
 #bug-bounty-tools
+This is the all in one tool
 
-##This is the all in one tool
-
-
-##installation command 
+installation command 
 
 ```
 git clone https://github.com/YOGENDRA-S/bug-bounty-tools 
