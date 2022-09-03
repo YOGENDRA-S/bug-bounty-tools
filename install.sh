@@ -32,7 +32,7 @@ sudo apt-get install -y git
 sudo apt-get install -y rename
 
 
-sudo apt-get install -y xarg
+sudo apt-get install -y xargs
 
 #install go
 if [[ -z "$GOPATH" ]];then
@@ -78,19 +78,66 @@ echo "Don't forget to set up AWS credentials!"
 mkdir ~/tools
 cd ~/tools/
 
-#installing
-echo "installing"
+
+
+#installing gau
+echo "installing gau"
 go install github.com/lc/gau/v2/cmd/gau@latest
+echo "done"
+
+
+#installing httpx
+echo "Installing httpx"
 go install github.com/projectdiscovery/httpx/cmd/httpx@latest
+echo "done"
+
+#installing dalfox
+echo "Installing dalfox"
 go install github.com/hahwul/dalfox/v2@latest
+echo "done"
+
+
+#installing subfinder
+echo "Installing subfinder"
 go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
-go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
+echo "done"
+
+
+#installing jsubfinder
+echo "installing jsubfinder"
+go install github.com/ThreatUnkown/jsubfinder@latest
+echo "done"
+
+
+#installing unfurl
+echo "Installing unfurl"
 go install github.com/tomnomnom/unfurl@latest
-go install -v github.com/projectdiscovery/naabu/v2/cmd/naabu@latest
+echo "done"
+
+#installing naabu
+echo "Installing naabu"
+go install github.com/projectdiscovery/naabu/v2/cmd/naabu@latest
+echo "done"
+
+
+#installing subzy
+echo "Installing subzy"
 go install -v github.com/lukasikic/subzy@latest
+echo "done"
+
+
+
+#installing proxify
+echo "Installing proxify"
 go install -v github.com/projectdiscovery/proxify/cmd/proxify@latest
+echo "done"
+
+#installing gobuster
+echo "Installing gobuster"
 go install github.com/OJ/gobuster/v3@latest
 echo "done"
+
+
 
 #installing qsreplace
 echo "installing qsreplace"
@@ -267,8 +314,6 @@ git clone https://github.com/sa7mon/S3Scanner.git /root/tools/content-discovery/
 cd /root/tools/content-discovery/AWS/S3Scanner
 pip install -r requirements.txt
 echo "done"
-
-
 
 #installing JSParser
 echo "installing JSParser"
