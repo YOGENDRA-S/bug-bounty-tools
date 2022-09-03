@@ -32,21 +32,7 @@ sudo apt-get install -y git
 sudo apt-get install -y rename
 
 
-sudo apt-get install -y xargs
-
-#install
-echo "installing"
-go install github.com/lc/gau/v2/cmd/gau@latest
-go install -v github.com/projectdiscovery/httpx/cmd/httpx@lates
-go install github.com/hahwul/dalfox/v2@latest
-go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
-go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
-go install github.com/tomnomnom/unfurl@latest
-go install -v github.com/projectdiscovery/naabu/v2/cmd/naabu@latest
-go install -v github.com/lukasikic/subzy@latest
-go install -v github.com/projectdiscovery/proxify/cmd/proxify@latest
-go install github.com/OJ/gobuster/v3@latest
-echo "done"
+sudo apt-get install -y xarg
 
 #install go
 if [[ -z "$GOPATH" ]];then
@@ -95,7 +81,7 @@ cd ~/tools/
 #installing
 echo "installing"
 go install github.com/lc/gau/v2/cmd/gau@latest
-go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
+go install github.com/projectdiscovery/httpx/cmd/httpx@latest
 go install github.com/hahwul/dalfox/v2@latest
 go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
 go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
@@ -106,10 +92,14 @@ go install -v github.com/projectdiscovery/proxify/cmd/proxify@latest
 go install github.com/OJ/gobuster/v3@latest
 echo "done"
 
+#installing qsreplace
+echo "installing qsreplace"
+go install github.com/tomnomnom/qsreplace@latest
+echo "done"
 
 #installing aquatone
-echo "Installing Aquatone"
-go get -u github.com/michenriksen/aquatone
+echo "Installing aquatone"
+go install github.com/michenriksen/aquatone@latest
 echo "done"
  
 
@@ -120,12 +110,12 @@ echo "done"
 
 #installing waybackurls
 echo "installing waybackurls"
-go get -u github.com/tomnomnom/waybackurls
+go install github.com/tomnomnom/waybackurls@latest
 echo "done"
 
 #installing assetfinder
 echo "installing assetfinder"
-go get -u github.com/tomnomnom/assetfinder
+go install github.com/tomnomnom/assetfinder@latest
 echo "done"
 
 
@@ -137,7 +127,7 @@ echo "done"
 
 #installing gf
 echo "installing gf"
-go get -u github.com/tomnomnom/gf
+go install github.com/tomnomnom/gf@latest
 echo "done"
 
 
@@ -160,8 +150,8 @@ git clone https://github.com/TheRook/subbrute.git root/tools/subdomain-enum/subb
 echo "done"
 
 #installing assetfinder
-echo "Installing asset finder"
-go get -u github.com/tomnomnom/assetfinder
+echo "Installing assetfinder"
+go install github.com/tomnomnom/assetfinder@latest
 echo "done"
 
 #installing domain-finder
@@ -172,8 +162,8 @@ echo "done"
 
 #installing rsdl
 echo "Installing rsdl"
-go get -u github.com/tismayil/rsdl
-go build rsdl.go
+go install github.com/tismayil/rsdl@latest
+echo "done"
 
 #installing subDomainizer
 echo "Installing subDomainizer"
@@ -206,7 +196,7 @@ echo "done"
 
 #installing amass
 echo "Installing amass"
-go get -u github.com/caffix/amass
+go install github.com/caffix/amass@latest
 echo "done"
 
 #installing sub.sh
@@ -249,7 +239,7 @@ echo "done"
 
 #installing slurp
 echo "installing slurp"
-go get -u github.com/nuncan/slurp
+go install github.com/nuncan/slurp@latest
 echo "done"
 
 #installing lazys3
@@ -332,12 +322,12 @@ echo "done"
 
 #installing meg
 echo "installing meg"
-go get -u github.com/tomnomnom/meg
+go install github.com/tomnomnom/meg@latest
 echo "done"
 
 #installing hakrawler
 echo "installing hakrawler"
-go get  -u github.com/hakluke/hakrawler
+go install github.com/hakluke/hakrawler@latest
 echo "done"
 
 
@@ -364,7 +354,7 @@ echo "done"
 
 #installing subjack
 echo "installing subjack"
-go get -u github.com/haccer/subjack
+go install github.com/haccer/subjack@latest
 echo "done"
 
 
@@ -382,7 +372,7 @@ echo "done"
 
 #installing SubOver
 echo "installing SubOver"
-go get -u github.com/Ice3man543/SubOver
+go install github.com/Ice3man543/SubOver@latest
 echo "done"
 
 
@@ -529,7 +519,7 @@ echo "done"
 
 #installing XRay
 echo "installing XRay"
-go get -u github.com/evilsocket/xray
+go install github.com/evilsocket/xray@latest
 echo "done"
 
 
@@ -623,7 +613,7 @@ echo "done"
 
 #installing httprobe
 echo "installing httprobe"
-go get -u github.com/tomnomnom/httprobe
+go install github.com/tomnomnom/httprobe@latest
 echo "done"
 
 #installing broken-link-checker
